@@ -1,23 +1,24 @@
 import UIKit
 
-protocol DurationProgressBarViewDelegate: AnyObject {
+public protocol DurationProgressBarViewDelegate: AnyObject {
     func durationProgressBarDidFinishedProgress(_ durationProgressBar: DurationProgressBarView)
 }
 
-class DurationProgressBarView: UIView {
-    var progressView = UIView()
-    var progressPercent: Double = 0
-    var progressDuration: Double = 0 // total duration in seconds
-    var runLoop: CADisplayLink?
-    var progressStartTimestamp: CFTimeInterval?
-    var delegate: DurationProgressBarViewDelegate?
+public class DurationProgressBarView: UIView {
+    public var progressView = UIView()
+    public var delegate: DurationProgressBarViewDelegate?
 
-    init() {
+    public private(set) var progressPercent: Double = 0
+    private var progressDuration: Double = 0 // total duration in seconds
+    private var runLoop: CADisplayLink?
+    private var progressStartTimestamp: CFTimeInterval?
+
+    public init() {
         super.init(frame: .zero)
         commonInit()
     }
 
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
     }
@@ -26,13 +27,13 @@ class DurationProgressBarView: UIView {
         addSubview(progressView)
     }
 
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         let width = frame.size.width * CGFloat(progressPercent)
         progressView.frame = CGRect(x: 0, y: 0, width: width, height: frame.size.height)
     }
 
-    func startProgress(duration: Double) {
+    public func startProgress(duration: Double) {
         endProgress()
         progressDuration = duration
         runLoop = CADisplayLink(target: self, selector: #selector(updateProgress))
@@ -55,7 +56,7 @@ class DurationProgressBarView: UIView {
         }
     }
 
-    func endProgress() {
+    public func endProgress() {
         runLoop?.invalidate()
         runLoop = nil
         progressStartTimestamp = nil
