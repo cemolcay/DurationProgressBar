@@ -24,7 +24,6 @@ class DurationProgressBar: UIView {
 
     func commonInit() {
         addSubview(progressView)
-        progressView.backgroundColor = .durationProgressColor
     }
 
     override func layoutSubviews() {
