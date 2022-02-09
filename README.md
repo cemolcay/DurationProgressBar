@@ -5,6 +5,8 @@ Create a progress bar based on a duration in seconds.
 The view is fully customisable. 
 
 
+![alt tag](https://github.com/cemolcay/DurationProgressBar/blob/main/demo.gif?raw=true)
+
 Install
 --
 
