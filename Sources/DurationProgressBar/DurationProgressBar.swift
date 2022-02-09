@@ -1,16 +1,16 @@
 import UIKit
 
-protocol DurationProgressBarDelegate: AnyObject {
-    func durationProgressBarDidFinishedProgress(_ durationProgressBar: DurationProgressBar)
+protocol DurationProgressBarViewDelegate: AnyObject {
+    func durationProgressBarDidFinishedProgress(_ durationProgressBar: DurationProgressBarView)
 }
 
-class DurationProgressBar: UIView {
+class DurationProgressBarView: UIView {
     var progressView = UIView()
     var progressPercent: Double = 0
     var progressDuration: Double = 0 // total duration in seconds
     var runLoop: CADisplayLink?
     var progressStartTimestamp: CFTimeInterval?
-    var delegate: DurationProgressBarDelegate?
+    var delegate: DurationProgressBarViewDelegate?
 
     init() {
         super.init(frame: .zero)
