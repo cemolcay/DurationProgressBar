@@ -13,6 +13,8 @@
 		C1BC185427B3CA1000BA2053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BC185227B3CA1000BA2053 /* Main.storyboard */; };
 		C1BC185627B3CA1200BA2053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BC185527B3CA1200BA2053 /* Assets.xcassets */; };
 		C1BC185927B3CA1200BA2053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BC185727B3CA1200BA2053 /* LaunchScreen.storyboard */; };
+		C1BC186627B3CA5500BA2053 /* DurationProgressBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BC186227B3CA5500BA2053 /* DurationProgressBarTests.swift */; };
+		C1BC186727B3CA5500BA2053 /* DurationProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BC186527B3CA5500BA2053 /* DurationProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C1BC185527B3CA1200BA2053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1BC185827B3CA1200BA2053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1BC185A27B3CA1200BA2053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1BC186227B3CA5500BA2053 /* DurationProgressBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationProgressBarTests.swift; sourceTree = "<group>"; };
+		C1BC186527B3CA5500BA2053 /* DurationProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurationProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,40 @@
 				C1BC185527B3CA1200BA2053 /* Assets.xcassets */,
 				C1BC185727B3CA1200BA2053 /* LaunchScreen.storyboard */,
 				C1BC185A27B3CA1200BA2053 /* Info.plist */,
+				C1BC186327B3CA5500BA2053 /* Sources */,
+				C1BC186027B3CA5500BA2053 /* Tests */,
+			);
+			path = DurationProgressBar;
+			sourceTree = "<group>";
+		};
+		C1BC186027B3CA5500BA2053 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C1BC186127B3CA5500BA2053 /* DurationProgressBarTests */,
+			);
+			path = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		C1BC186127B3CA5500BA2053 /* DurationProgressBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1BC186227B3CA5500BA2053 /* DurationProgressBarTests.swift */,
+			);
+			path = DurationProgressBarTests;
+			sourceTree = "<group>";
+		};
+		C1BC186327B3CA5500BA2053 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C1BC186427B3CA5500BA2053 /* DurationProgressBar */,
+			);
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		C1BC186427B3CA5500BA2053 /* DurationProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				C1BC186527B3CA5500BA2053 /* DurationProgressBar.swift */,
 			);
 			path = DurationProgressBar;
 			sourceTree = "<group>";
@@ -138,6 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1BC186727B3CA5500BA2053 /* DurationProgressBar.swift in Sources */,
+				C1BC186627B3CA5500BA2053 /* DurationProgressBarTests.swift in Sources */,
 				C1BC185127B3CA1000BA2053 /* ViewController.swift in Sources */,
 				C1BC184D27B3CA1000BA2053 /* AppDelegate.swift in Sources */,
 				C1BC184F27B3CA1000BA2053 /* SceneDelegate.swift in Sources */,
