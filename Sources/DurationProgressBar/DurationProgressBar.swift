@@ -9,7 +9,7 @@ public class DurationProgressBarView: UIView {
     public var delegate: DurationProgressBarViewDelegate?
 
     public private(set) var progressPercent: Double = 0
-    private var progressDuration: Double = 0 // total duration in seconds
+    public private(set) var progressDuration: Double = 0 // total duration in seconds
     private var runLoop: CADisplayLink?
     private var progressStartTimestamp: CFTimeInterval?
 
