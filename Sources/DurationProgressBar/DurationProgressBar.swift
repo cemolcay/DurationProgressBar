@@ -10,6 +10,7 @@ public class DurationProgressBarView: UIView {
 
     public private(set) var progressPercent: Double = 0
     public private(set) var progressDuration: Double = 0 // total duration in seconds
+    public private(set) var progressStartPosition: Double = 0
     private var runLoop: CADisplayLink?
     private var progressStartTimestamp: CFTimeInterval?
 
@@ -36,7 +37,7 @@ public class DurationProgressBarView: UIView {
     public func startProgress(duration: Double, from: Double = 0.0) {
         endProgress()
         progressDuration = duration
-        progressPercent = from == 0 ? 0 : max(1, from / duration)
+        progressStartPosition = from
         runLoop = CADisplayLink(target: self, selector: #selector(updateProgress))
         runLoop?.add(to: .main, forMode: .common)
     }
@@ -48,10 +49,10 @@ public class DurationProgressBarView: UIView {
         }
 
         let progress = timestamp - progressStartTimestamp!
-        progressPercent = 1 - (progressDuration - progress) / progressDuration
+        progressPercent = 1 - (progressDuration - progress - progressStartPosition) / progressDuration
         setNeedsLayout()
 
-        if progress >= progressDuration {
+        if progress >= progressDuration - progressStartPosition {
             endProgress()
             delegate?.durationProgressBarDidFinishedProgress(self)
         }
