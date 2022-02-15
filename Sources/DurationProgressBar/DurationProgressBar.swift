@@ -35,7 +35,8 @@ public class DurationProgressBarView: UIView {
 
     public func startProgress(duration: Double, from: Double = 0.0) {
         endProgress()
-        progressDuration = duration - (from > duration ? 0 : max(from, 0))
+        progressDuration = duration
+        progressPercent = from == 0 ? 0 : from / duration
         runLoop = CADisplayLink(target: self, selector: #selector(updateProgress))
         runLoop?.add(to: .main, forMode: .common)
     }
